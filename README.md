@@ -1,7 +1,7 @@
 
 # SSLazyList Documentation
 
-[SmartSense Solutions](https://www.smartsensesolutions.com/) has introduced `SSLazyList`, `SSLazyList` makes working with `List` in SwiftUI more efficient and elegant. By providing customizable loading views, no data messages, and flexible configurations, it serves as a wrapper for the standard `List` hence developer can leverage all features available in `List`
+[SmartSense Solutions](https://www.smartsensesolutions.com/) has introduced `SSLazyList`, `SSLazyList` makes working with `List` in SwiftUI more efficient and elegant. By providing customisable list cell animations, loading views, no data messages, and flexible configurations, it serves as a wrapper for the standard `List` hence developer can leverage all features available in `List`
  
 ### Key Features
 
@@ -116,10 +116,10 @@ dependencies: [
 
 ## Compatibility
 
-- iOS 15.0+
-- Swift 5.0+
+- iOS v15.0+
+- Swift v5.0+
 - SwiftUI 
-- XCode 14+
+- XCode v14+
 
 ## Privacy
 SSLazyList does not collect any kind of data in anyway.
