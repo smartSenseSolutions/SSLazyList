@@ -80,9 +80,9 @@ try the demo project for better understanding.
 
 ## Screenshots
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/SmartAkashNara/SSLazyList/assets/160708458/d621a57c-4d58-4aba-889e-6b2d68737278" alt="No Data Found - SSLazyList" width="200" style="margin-right: 20px;" loop>
-    <img src="https://github.com/SmartAkashNara/SSLazyList/assets/160708458/9e3383a6-c2bb-4acc-b4eb-d222c9964772" alt="Animate From Right - SSLazyList" width="200" style="margin-right: 20px;" loop>
-    <img src="https://github.com/SmartAkashNara/SSLazyList/assets/160708458/50a11103-22d3-4ca9-950c-e8d6cb736cc1" alt="Animation Cell - SSLazyList" width="200" loop>
+    <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/95f2a014-1665-44fe-a2d1-8888d15481d9" alt="No Data Found - SSLazyList" width="200" style="margin-right: 20px;" loop>
+    <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/e64458cc-9a11-4510-87dd-d0ee80d5a3b3" alt="Animate From Right - SSLazyList" width="200" style="margin-right: 20px;" loop>
+    <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/78b1d17a-84a7-47c5-8855-ff5f71f0c72a" alt="Animation Cell - SSLazyList" width="200" loop>
 </div>
 
 ## Note
