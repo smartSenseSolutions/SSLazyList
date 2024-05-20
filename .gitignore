@@ -9,6 +9,16 @@ xcuserdata/
 *.xcscmblueprint
 *.xccheckout
 
+
+.DS_Store
+
+/.build
+/Packages
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
+
+
 ## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 build/
 DerivedData/

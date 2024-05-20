@@ -1,0 +1,15 @@
+{
+  "originHash" : "f45a70eaadd460bd4fc6c105918fe7eb7e4783f3e590da46bc92b60e9593613d",
+  "pins" : [
+    {
+      "identity" : "sslazylist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/KalpeshJetaniSS/SSLazyList",
+      "state" : {
+        "branch" : "Package-Integration-Test",
+        "revision" : "7e6d4660c5a2380ef852ee8f30ef93b600fb2499"
+      }
+    }
+  ],
+  "version" : 3
+}

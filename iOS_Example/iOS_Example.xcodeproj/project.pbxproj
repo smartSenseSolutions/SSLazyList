@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		04580B9B2BF75E1000093EA3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04580B9A2BF75E1000093EA3 /* UserModel.swift */; };
 		04580B9E2BF75E3F00093EA3 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04580B9D2BF75E3F00093EA3 /* UserDataService.swift */; };
+		04580BED2BF796A500093EA3 /* SSLazyList in Frameworks */ = {isa = PBXBuildFile; productRef = 04580BEC2BF796A500093EA3 /* SSLazyList */; };
 		047522DE2BF75AFA00A32F19 /* iOS_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522DD2BF75AFA00A32F19 /* iOS_ExampleApp.swift */; };
 		047522E02BF75AFA00A32F19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522DF2BF75AFA00A32F19 /* ContentView.swift */; };
 		047522E22BF75AFB00A32F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047522E12BF75AFB00A32F19 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		04580B9A2BF75E1000093EA3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		04580B9D2BF75E3F00093EA3 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		04580BE62BF7940000093EA3 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		047522DA2BF75AFA00A32F19 /* iOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047522DD2BF75AFA00A32F19 /* iOS_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ExampleApp.swift; sourceTree = "<group>"; };
 		047522DF2BF75AFA00A32F19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04580BED2BF796A500093EA3 /* SSLazyList in Frameworks */,
 				0475230A2BF75B1F00A32F19 /* SSLazyList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +100,7 @@
 		047522D12BF75AFA00A32F19 = {
 			isa = PBXGroup;
 			children = (
+				04580BE62BF7940000093EA3 /* Package.swift */,
 				047522DC2BF75AFA00A32F19 /* iOS_Example */,
 				047522EE2BF75AFB00A32F19 /* iOS_ExampleTests */,
 				047522F82BF75AFB00A32F19 /* iOS_ExampleUITests */,
@@ -171,6 +175,7 @@
 			name = iOS_Example;
 			packageProductDependencies = (
 				047523092BF75B1F00A32F19 /* SSLazyList */,
+				04580BEC2BF796A500093EA3 /* SSLazyList */,
 			);
 			productName = iOS_Example;
 			productReference = 047522DA2BF75AFA00A32F19 /* iOS_Example.app */;
@@ -245,7 +250,7 @@
 			);
 			mainGroup = 047522D12BF75AFA00A32F19;
 			packageReferences = (
-				047523082BF75B1F00A32F19 /* XCLocalSwiftPackageReference "../SSLazyList" */,
+				04580BEB2BF796A500093EA3 /* XCRemoteSwiftPackageReference "SSLazyList" */,
 			);
 			productRefGroup = 047522DB2BF75AFA00A32F19 /* Products */;
 			projectDirPath = "";
@@ -650,14 +655,23 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		047523082BF75B1F00A32F19 /* XCLocalSwiftPackageReference "../SSLazyList" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SSLazyList;
+/* Begin XCRemoteSwiftPackageReference section */
+		04580BEB2BF796A500093EA3 /* XCRemoteSwiftPackageReference "SSLazyList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KalpeshJetaniSS/SSLazyList";
+			requirement = {
+				branch = "Package-Integration-Test";
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		04580BEC2BF796A500093EA3 /* SSLazyList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04580BEB2BF796A500093EA3 /* XCRemoteSwiftPackageReference "SSLazyList" */;
+			productName = SSLazyList;
+		};
 		047523092BF75B1F00A32F19 /* SSLazyList */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SSLazyList;
