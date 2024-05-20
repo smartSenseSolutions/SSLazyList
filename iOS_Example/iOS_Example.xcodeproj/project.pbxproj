@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		04580B9B2BF75E1000093EA3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04580B9A2BF75E1000093EA3 /* UserModel.swift */; };
 		04580B9E2BF75E3F00093EA3 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04580B9D2BF75E3F00093EA3 /* UserDataService.swift */; };
-		04580BED2BF796A500093EA3 /* SSLazyList in Frameworks */ = {isa = PBXBuildFile; productRef = 04580BEC2BF796A500093EA3 /* SSLazyList */; };
 		047522DE2BF75AFA00A32F19 /* iOS_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522DD2BF75AFA00A32F19 /* iOS_ExampleApp.swift */; };
 		047522E02BF75AFA00A32F19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522DF2BF75AFA00A32F19 /* ContentView.swift */; };
 		047522E22BF75AFB00A32F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047522E12BF75AFB00A32F19 /* Assets.xcassets */; };
@@ -18,6 +17,7 @@
 		047522FA2BF75AFB00A32F19 /* iOS_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522F92BF75AFB00A32F19 /* iOS_ExampleUITests.swift */; };
 		047522FC2BF75AFB00A32F19 /* iOS_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522FB2BF75AFB00A32F19 /* iOS_ExampleUITestsLaunchTests.swift */; };
 		0475230A2BF75B1F00A32F19 /* SSLazyList in Frameworks */ = {isa = PBXBuildFile; productRef = 047523092BF75B1F00A32F19 /* SSLazyList */; };
+		04BFD2E32BFB207E008938B2 /* SSLazyList in Frameworks */ = {isa = PBXBuildFile; productRef = 04BFD2E22BFB207E008938B2 /* SSLazyList */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04580BED2BF796A500093EA3 /* SSLazyList in Frameworks */,
+				04BFD2E32BFB207E008938B2 /* SSLazyList in Frameworks */,
 				0475230A2BF75B1F00A32F19 /* SSLazyList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,7 +173,7 @@
 			name = iOS_Example;
 			packageProductDependencies = (
 				047523092BF75B1F00A32F19 /* SSLazyList */,
-				04580BEC2BF796A500093EA3 /* SSLazyList */,
+				04BFD2E22BFB207E008938B2 /* SSLazyList */,
 			);
 			productName = iOS_Example;
 			productReference = 047522DA2BF75AFA00A32F19 /* iOS_Example.app */;
@@ -248,7 +248,7 @@
 			);
 			mainGroup = 047522D12BF75AFA00A32F19;
 			packageReferences = (
-				04580BEB2BF796A500093EA3 /* XCRemoteSwiftPackageReference "SSLazyList" */,
+				04BFD2E12BFB207E008938B2 /* XCRemoteSwiftPackageReference "SSLazyList" */,
 			);
 			productRefGroup = 047522DB2BF75AFA00A32F19 /* Products */;
 			projectDirPath = "";
@@ -654,24 +654,24 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		04580BEB2BF796A500093EA3 /* XCRemoteSwiftPackageReference "SSLazyList" */ = {
+		04BFD2E12BFB207E008938B2 /* XCRemoteSwiftPackageReference "SSLazyList" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/KalpeshJetaniSS/SSLazyList";
 			requirement = {
-				branch = "Package-Integration-Test";
+				branch = main;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		04580BEC2BF796A500093EA3 /* SSLazyList */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 04580BEB2BF796A500093EA3 /* XCRemoteSwiftPackageReference "SSLazyList" */;
-			productName = SSLazyList;
-		};
 		047523092BF75B1F00A32F19 /* SSLazyList */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = SSLazyList;
+		};
+		04BFD2E22BFB207E008938B2 /* SSLazyList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BFD2E12BFB207E008938B2 /* XCRemoteSwiftPackageReference "SSLazyList" */;
 			productName = SSLazyList;
 		};
 /* End XCSwiftPackageProductDependency section */
