@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '15.0'
+
+target 'SSLazyList_Example' do
+  pod 'SSLazyList', :path => '../'
+
+  target 'SSLazyList_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

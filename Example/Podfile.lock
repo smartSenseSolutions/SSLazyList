@@ -1,0 +1,16 @@
+PODS:
+  - SSLazyList (0.1.0)
+
+DEPENDENCIES:
+  - SSLazyList (from `../`)
+
+EXTERNAL SOURCES:
+  SSLazyList:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SSLazyList: a587050c1d1dd62abbd2a731f217d96d85c13a52
+
+PODFILE CHECKSUM: 2ecff1f0f345ecbe88e18aabb89380715a859967
+
+COCOAPODS: 1.15.2
