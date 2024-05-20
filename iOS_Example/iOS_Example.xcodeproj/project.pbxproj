@@ -11,7 +11,6 @@
 		04580B9E2BF75E3F00093EA3 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04580B9D2BF75E3F00093EA3 /* UserDataService.swift */; };
 		047522DE2BF75AFA00A32F19 /* iOS_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522DD2BF75AFA00A32F19 /* iOS_ExampleApp.swift */; };
 		047522E02BF75AFA00A32F19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522DF2BF75AFA00A32F19 /* ContentView.swift */; };
-		047522E22BF75AFB00A32F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047522E12BF75AFB00A32F19 /* Assets.xcassets */; };
 		047522E62BF75AFB00A32F19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047522E52BF75AFB00A32F19 /* Preview Assets.xcassets */; };
 		047522F02BF75AFB00A32F19 /* iOS_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522EF2BF75AFB00A32F19 /* iOS_ExampleTests.swift */; };
 		047522FA2BF75AFB00A32F19 /* iOS_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522F92BF75AFB00A32F19 /* iOS_ExampleUITests.swift */; };
@@ -40,11 +39,9 @@
 /* Begin PBXFileReference section */
 		04580B9A2BF75E1000093EA3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		04580B9D2BF75E3F00093EA3 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
-		04580BE62BF7940000093EA3 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		047522DA2BF75AFA00A32F19 /* iOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047522DD2BF75AFA00A32F19 /* iOS_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ExampleApp.swift; sourceTree = "<group>"; };
 		047522DF2BF75AFA00A32F19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		047522E12BF75AFB00A32F19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047522E32BF75AFB00A32F19 /* iOS_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_Example.entitlements; sourceTree = "<group>"; };
 		047522E52BF75AFB00A32F19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		047522EB2BF75AFB00A32F19 /* iOS_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +97,6 @@
 		047522D12BF75AFA00A32F19 = {
 			isa = PBXGroup;
 			children = (
-				04580BE62BF7940000093EA3 /* Package.swift */,
 				047522DC2BF75AFA00A32F19 /* iOS_Example */,
 				047522EE2BF75AFB00A32F19 /* iOS_ExampleTests */,
 				047522F82BF75AFB00A32F19 /* iOS_ExampleUITests */,
@@ -125,7 +121,6 @@
 				047522DF2BF75AFA00A32F19 /* ContentView.swift */,
 				04580B9C2BF75E2300093EA3 /* Services */,
 				04580B992BF75E0000093EA3 /* Models */,
-				047522E12BF75AFB00A32F19 /* Assets.xcassets */,
 				047522E32BF75AFB00A32F19 /* iOS_Example.entitlements */,
 				047522E42BF75AFB00A32F19 /* Preview Content */,
 			);
@@ -269,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				047522E62BF75AFB00A32F19 /* Preview Assets.xcassets in Resources */,
-				047522E22BF75AFB00A32F19 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
