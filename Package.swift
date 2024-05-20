@@ -32,6 +32,7 @@ let package = Package(
                     "iOS_ExampleUITests",
                     "iOS_ExampleUITests/iOS_ExampleUITests.swift",
                     "iOS_ExampleUITests/iOS_ExampleUITestsLaunchTests.swift"]),
+
         .testTarget(
             name: "SSLazyListTests",
             dependencies: ["SSLazyList"]),
