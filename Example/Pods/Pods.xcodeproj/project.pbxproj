@@ -49,7 +49,7 @@
 		23F15B3BBB5CB9643D745ABD4403F439 /* Pods-SSLazyList_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSLazyList_Example.release.xcconfig"; sourceTree = "<group>"; };
 		250C5B36FA38629AE89174A3562FD255 /* SSLazyList-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSLazyList-prefix.pch"; sourceTree = "<group>"; };
 		254A3A0BDCB5C80C7A6E911337D31386 /* Pods-SSLazyList_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SSLazyList_Example"; path = Pods_SSLazyList_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		35B9EF34F7C40A96BD32973A36B19289 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		35B9EF34F7C40A96BD32973A36B19289 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		404275A5CAD3E4E8C4ECEF6DA3FAA34C /* SSViewType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSViewType.swift; path = Sources/SSViewType.swift; sourceTree = "<group>"; };
 		41F4FD404D231F92253E5CA15BFAE719 /* Pods-SSLazyList_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SSLazyList_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		44FEDC0C4B3C3DBCC260BC080665527A /* SSLazyList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLazyList.swift; path = Sources/SSLazyList.swift; sourceTree = "<group>"; };
@@ -62,12 +62,12 @@
 		7BC3C65705B9D35EFFA7E9BB07911476 /* Pods-SSLazyList_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSLazyList_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		81E3DFDB637F42416D6BD800D907F78F /* Pods-SSLazyList_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SSLazyList_Example-Info.plist"; sourceTree = "<group>"; };
 		972FA553A4570BE670B5BD72F4DD6EAF /* SSLazyList-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SSLazyList-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6FC9C4210D20A89ECD4E7EE7AFF2B54 /* Pods-SSLazyList_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSLazyList_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B77F9349E5184CF96E23911BEC721EEB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B77F9349E5184CF96E23911BEC721EEB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		C1B4B46D1802E8E1E6A8583C55728347 /* SSLazyList-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSLazyList-umbrella.h"; sourceTree = "<group>"; };
-		C3706EF9F5EF8715E02954E2F5064AE0 /* SSLazyList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSLazyList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8E98C4F99BACCA303BC40B5EFB63DC7 /* SSLazyList.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SSLazyList.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C3706EF9F5EF8715E02954E2F5064AE0 /* SSLazyList */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SSLazyList; path = SSLazyList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E98C4F99BACCA303BC40B5EFB63DC7 /* SSLazyList.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SSLazyList.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C988BFF7364068D27846A19EE22F846F /* SSLazyList-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SSLazyList-Info.plist"; sourceTree = "<group>"; };
 		CE830350A2A3AA48A4D4CB8C03A1EBF1 /* Pods-SSLazyList_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SSLazyList_Example-dummy.m"; sourceTree = "<group>"; };
 		D25D396AC6EEE8E97302808566E6ED7D /* Pods-SSLazyList_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SSLazyList_Tests"; path = Pods_SSLazyList_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,7 +210,7 @@
 			children = (
 				254A3A0BDCB5C80C7A6E911337D31386 /* Pods-SSLazyList_Example */,
 				D25D396AC6EEE8E97302808566E6ED7D /* Pods-SSLazyList_Tests */,
-				C3706EF9F5EF8715E02954E2F5064AE0 /* SSLazyList.framework */,
+				C3706EF9F5EF8715E02954E2F5064AE0 /* SSLazyList */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 			);
 			name = SSLazyList;
 			productName = SSLazyList;
-			productReference = C3706EF9F5EF8715E02954E2F5064AE0 /* SSLazyList.framework */;
+			productReference = C3706EF9F5EF8715E02954E2F5064AE0 /* SSLazyList */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -473,7 +473,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SSLazyList/SSLazyList-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SSLazyList/SSLazyList-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SSLazyList/SSLazyList.modulemap";
 				PRODUCT_MODULE_NAME = SSLazyList;
@@ -678,7 +678,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -700,7 +701,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SSLazyList/SSLazyList-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SSLazyList/SSLazyList-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SSLazyList/SSLazyList.modulemap";
 				PRODUCT_MODULE_NAME = SSLazyList;

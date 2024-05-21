@@ -1,5 +1,5 @@
 PODS:
-  - SSLazyList (0.1.0)
+  - SSLazyList (1.0.0)
 
 DEPENDENCIES:
   - SSLazyList (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SSLazyList: bee9657106b8a93d953d59d7214dede4a7d7705b
+  SSLazyList: dae01fd95ccbb8ef0a9bf3e028b289623d10e74a
 
 PODFILE CHECKSUM: 2ecff1f0f345ecbe88e18aabb89380715a859967
 
