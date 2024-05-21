@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-'[SmartSense Solutions](https://www.smartsensesolutions.com/) has introduced `SSLazyList`, `SSLazyList` makes working with `List` in SwiftUI more efficient and elegant. By providing customisable list cell animations, loading views, no data messages, and flexible configurations, it serves as a wrapper for the standard `List` hence developer can leverage all features available in `List`'
+[SmartSense Solutions](https://www.smartsensesolutions.com/) has introduced `SSLazyList`, `SSLazyList` makes working with `List` in SwiftUI more efficient and elegant. By providing customisable list cell animations, loading views, no data messages, and flexible configurations, it serves as a wrapper for the standard `List` hence developer can leverage all features available in `List`
   ### Key Features
 
   - **Loading View**: Easily set or use a default `Loading...` view to indicate data loading.
@@ -32,11 +32,13 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'smartsensesolutions' => 'open-source@smartsensesolutoins.com' }
   s.source           = { :git => 'https://github.com/smartsensesolutions/SSLazyList.git', :tag => s.version.to_s}
-  s.social_media_url = 'https://x.com/smartsense13'
+  s.social_media_url = 'https://twitter.com/smartsense13'
 
   s.platform     = :ios, '15.0' 
   s.ios.deployment_target = '15.0'
-
+  s.platforms = {
+        "iOS": "15.0"
+    }
   s.source_files = 'Sources/*.swift'
   s.swift_version = '5.0'
   
