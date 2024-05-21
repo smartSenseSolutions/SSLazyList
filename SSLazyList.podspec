@@ -34,10 +34,10 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/smartsensesolutions/SSLazyList.git', :tag => s.version.to_s}
   s.social_media_url = 'https://twitter.com/smartsense13'
 
-  s.platform     = :ios, '15.0' 
+  #s.platform     = :ios, '15.0'
   s.ios.deployment_target = '15.0'
   s.platforms = {
-        "iOS": "15.0"
+        "ios": "15.0"
     }
   s.source_files = 'Sources/*.swift'
   s.swift_version = '5.0'
