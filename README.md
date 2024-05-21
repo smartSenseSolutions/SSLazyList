@@ -43,6 +43,9 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'SSLazyList', '~> 1.0.0'
 ```
+Update your Xcode project build option ```ENABLE_USER_SCRIPT_SANDBOXING to 'No'.```
+<img width="100%" alt="ENABLE_USER_SCRIPT_SANDBOXING" src="https://github.com/smartSenseSolutions/SSLazyList/assets/160708458/dba2c39e-9ab2-4c7a-86ea-ff5c8201c4f8">
+
 and in your code add `import SSLazyList`.
 
 ##[Swift Package Manager](https://swift.org/package-manager/)
