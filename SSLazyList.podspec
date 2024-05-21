@@ -28,19 +28,17 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/smartsensesolutions/SSLazyList'
-  s.screenshots     = 'https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/e64458cc-9a11-4510-87dd-d0ee80d5a3b3', 'https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/78b1d17a-84a7-47c5-8855-ff5f71f0c72a', 'https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/95f2a014-1665-44fe-a2d1-8888d15481d9'
+  s.screenshots     = 'https://github.com/smartsensesolutions/SSLazyList/assets/160708458/e64458cc-9a11-4510-87dd-d0ee80d5a3b3', 'https://github.com/smartsensesolutions/SSLazyList/assets/160708458/78b1d17a-84a7-47c5-8855-ff5f71f0c72a', 'https://github.com/smartsensesolutions/SSLazyList/assets/160708458/95f2a014-1665-44fe-a2d1-8888d15481d9'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'smartsensesolutions' => 'open-source@smartsensesolutoins.com' }
-  s.source           = { :git => 'https://github.com/smartsensesolutions/SSLazyList.git', :branch => 'cocoapods'}
-  s.social_media_url = 'https://twitter.com/smartsense13'
+  s.source           = { :git => 'https://github.com/smartsensesolutions/SSLazyList.git', :tag => s.version.to_s}
+  s.social_media_url = 'https://x.com/smartsense13'
 
+  s.platform     = :ios, '15.0' 
   s.ios.deployment_target = '15.0'
 
   s.source_files = 'Sources/*.swift'
   s.swift_version = '5.0'
-  s.platforms = {
-      "iOS": "15.0"
-  }
   
   # s.resource_bundles = {
   #   'SSLazyList' => ['SSLazyList/Assets/*.png']

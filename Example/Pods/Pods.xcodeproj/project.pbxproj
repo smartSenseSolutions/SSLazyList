@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		057F36BAA452603DE407D6F7F4C6530A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7C7CBF4366B196F4F8B133C8319AB1 /* Foundation.framework */; };
+		11033D1345D9A2E097B6CB5F97D9A5D0 /* SSListCellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE02CB470E810BF2B3D1E7399A2BDCE5 /* SSListCellAnimator.swift */; };
 		20905C83F54BB56C3E270831EE8E4FC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7C7CBF4366B196F4F8B133C8319AB1 /* Foundation.framework */; };
-		23F6964FB8ACA658C4EDBF596F871382 /* SSListCellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE02CB470E810BF2B3D1E7399A2BDCE5 /* SSListCellAnimator.swift */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		245E069E718C687A26C174A71C5BB843 /* SSViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404275A5CAD3E4E8C4ECEF6DA3FAA34C /* SSViewType.swift */; };
 		2ABEAE45FAF10ABD87DCBFE0F03887A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7C7CBF4366B196F4F8B133C8319AB1 /* Foundation.framework */; };
 		2BD3F24107F245B7BF520EB1F23869B4 /* Pods-SSLazyList_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5896087A796B2F65D0CB6644858EEE29 /* Pods-SSLazyList_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30A3F06BF81031A2509D85621A34D0BC /* Pods-SSLazyList_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE830350A2A3AA48A4D4CB8C03A1EBF1 /* Pods-SSLazyList_Example-dummy.m */; };
-		3D88EA02A2EDD948711E5549DF514981 /* SSLazyList-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FA553A4570BE670B5BD72F4DD6EAF /* SSLazyList-dummy.m */; };
-		4BE65522A4FDFAFE7664AF5623B7C6FB /* SSLazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEDC0C4B3C3DBCC260BC080665527A /* SSLazyList.swift */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		35086AF4E2A28957B342408C4161CDAE /* SSLazyList-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 972FA553A4570BE670B5BD72F4DD6EAF /* SSLazyList-dummy.m */; };
 		5139BFE95E224444792AB395590973D2 /* Pods-SSLazyList_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4FC7030951B2871419B244FDD9A36 /* Pods-SSLazyList_Tests-dummy.m */; };
-		B57E21D1D2C70D64525D043A3A2FE4D1 /* SSConfigLazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3D22213056A773385653C34A815187 /* SSConfigLazyList.swift */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9BCE120D69BA0A7639534D8443D6FA23 /* SSConfigLazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3D22213056A773385653C34A815187 /* SSConfigLazyList.swift */; };
+		ABCDC321EC3C6967A86694DDC8DC0414 /* SSLazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEDC0C4B3C3DBCC260BC080665527A /* SSLazyList.swift */; };
 		B5D11D39988BDD0189EACCD31125BE90 /* SSLazyList-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1B4B46D1802E8E1E6A8583C55728347 /* SSLazyList-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4AE32598121CA8BF53A400E64A1D338 /* Pods-SSLazyList_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D98943709BDE2D67E5006514F06AF6 /* Pods-SSLazyList_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C610F757C41AEABE3F198D08D48C4422 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20094AF9A05B5AFEE065EFE5403128D1 /* SwiftUI.framework */; };
-		EE647191170C5BE933816CF942A6806E /* SSViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404275A5CAD3E4E8C4ECEF6DA3FAA34C /* SSViewType.swift */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,7 +309,7 @@
 			buildConfigurationList = EDFE83A4D28F939B72443F8DAA6431F9 /* Build configuration list for PBXNativeTarget "SSLazyList" */;
 			buildPhases = (
 				2DED563C466E0BEF2E69E5F8DFEF78D2 /* Headers */,
-				64D557674148B3542A50B15D2DDAEB1B /* Sources */,
+				DB0F23275C29EE7A5F5B62A416D5D2DC /* Sources */,
 				176BD7F55D24D0F28615701C746A5D3A /* Frameworks */,
 				6940D3D6996327502A2EEB331C6AA0F9 /* Resources */,
 			);
@@ -392,15 +392,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64D557674148B3542A50B15D2DDAEB1B /* Sources */ = {
+		DB0F23275C29EE7A5F5B62A416D5D2DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B57E21D1D2C70D64525D043A3A2FE4D1 /* SSConfigLazyList.swift in Sources */,
-				4BE65522A4FDFAFE7664AF5623B7C6FB /* SSLazyList.swift in Sources */,
-				3D88EA02A2EDD948711E5549DF514981 /* SSLazyList-dummy.m in Sources */,
-				23F6964FB8ACA658C4EDBF596F871382 /* SSListCellAnimator.swift in Sources */,
-				EE647191170C5BE933816CF942A6806E /* SSViewType.swift in Sources */,
+				9BCE120D69BA0A7639534D8443D6FA23 /* SSConfigLazyList.swift in Sources */,
+				ABCDC321EC3C6967A86694DDC8DC0414 /* SSLazyList.swift in Sources */,
+				35086AF4E2A28957B342408C4161CDAE /* SSLazyList-dummy.m in Sources */,
+				11033D1345D9A2E097B6CB5F97D9A5D0 /* SSListCellAnimator.swift in Sources */,
+				245E069E718C687A26C174A71C5BB843 /* SSViewType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +422,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		025ACA3B86D602FC289F5D6DCD76AE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 610FC08EB7FB2A1CA1A6CD0B4402B2E9 /* SSLazyList.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SSLazyList/SSLazyList-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SSLazyList/SSLazyList-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SSLazyList/SSLazyList.modulemap";
+				PRODUCT_MODULE_NAME = SSLazyList;
+				PRODUCT_NAME = SSLazyList;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		40F9AAF7018A590B3A4486BD2B1A0B86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23F15B3BBB5CB9643D745ABD4403F439 /* Pods-SSLazyList_Example.release.xcconfig */;
@@ -457,11 +489,12 @@
 			};
 			name = Release;
 		};
-		60F1B07DB2C96D5ED4A35445DF6197BB /* Release */ = {
+		4F15A536792BB2606A98E2A279859E12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0025124B0A9ED3E1A0A3BE5D594080D3 /* SSLazyList.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -473,7 +506,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SSLazyList/SSLazyList-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SSLazyList/SSLazyList-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SSLazyList/SSLazyList.modulemap";
 				PRODUCT_MODULE_NAME = SSLazyList;
@@ -685,37 +718,6 @@
 			};
 			name = Release;
 		};
-		BEE05165CD037C6673BABA1E6870AD9B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 610FC08EB7FB2A1CA1A6CD0B4402B2E9 /* SSLazyList.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SSLazyList/SSLazyList-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SSLazyList/SSLazyList-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SSLazyList/SSLazyList.modulemap";
-				PRODUCT_MODULE_NAME = SSLazyList;
-				PRODUCT_NAME = SSLazyList;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		CE1229C56544E84874047D4C8AC2FB50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C399E11C48A4013E1AC035D4607844D /* Pods-SSLazyList_Tests.release.xcconfig */;
@@ -784,8 +786,8 @@
 		EDFE83A4D28F939B72443F8DAA6431F9 /* Build configuration list for PBXNativeTarget "SSLazyList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BEE05165CD037C6673BABA1E6870AD9B /* Debug */,
-				60F1B07DB2C96D5ED4A35445DF6197BB /* Release */,
+				025ACA3B86D602FC289F5D6DCD76AE47 /* Debug */,
+				4F15A536792BB2606A98E2A279859E12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
