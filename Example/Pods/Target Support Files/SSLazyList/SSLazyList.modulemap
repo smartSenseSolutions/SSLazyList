@@ -1,0 +1,6 @@
+framework module SSLazyList {
+  umbrella header "SSLazyList-umbrella.h"
+
+  export *
+  module * { export * }
+}
