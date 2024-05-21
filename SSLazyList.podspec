@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '15.0'
 
-  s.source_files = 'SSLazyList/Classes/*.swift'
+  s.source_files = 'Sources/*.swift'
   s.swift_version = '5.0'
   s.platforms = {
       "iOS": "15.0"

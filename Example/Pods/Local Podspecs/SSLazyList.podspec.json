@@ -24,7 +24,7 @@
   "platforms": {
     "ios": "15.0"
   },
-  "source_files": "SSLazyList/Classes/*.swift",
+  "source_files": "Sources/*.swift",
   "swift_versions": "5.0",
   "frameworks": [
     "Foundation",
