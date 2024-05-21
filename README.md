@@ -92,25 +92,28 @@ The data model should implement the `Identifiable` protocol, just like what's ne
 
 ## Setup Instructions
 
-[CocoaPods](http://cocoapods.org)
+[cocoapods](https://cocoapods.org/pods/SSLazyList)
+
+[Cocoapods Source available here](https://github.com/smartSenseSolutions/SSLazyList/tree/cocoapods)
 
 To integrate SSLazyList into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'SSLazyList', '~> 1.0'
+pod 'SSLazyList', '~> 1.0.0'
 ```
-and in your code add `import SSLazyList`.
 
-## Carthage
-- We are working on it :)
+and in your code add **import SSLazyList**.
 
-[Swift Package Manager](https://swift.org/package-manager/)
+
+## [Swift Package Manager](https://swift.org/package-manager/)
 
 When using Xcode 14 or later, you can install `SSLazyList` by going to your Project settings > `Swift Packages` and add the repository by providing the GitHub URL. Alternatively, you can go to `File` > `Swift Packages` > `Add Package Dependencies...`
 
+![Using_SwiftPackageManager](https://github.com/smartSenseSolutions/SSLazyList/assets/160708458/3c9b41b9-2783-4f0e-b7da-89e9b5e77c92)
+
 ```swift
 dependencies: [
-    .package(url: "https://github.com/smartSenseSolutions/SSLazyList.git", .upToNextMajor(from: "1.0"))
+    .package(url: "https://github.com/smartSenseSolutions/SSLazyList.git", .branch("main"))
 ]
 ```
 
