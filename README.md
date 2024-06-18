@@ -52,24 +52,76 @@ var config: SSConfigLazyList {
 
     //SSLazyList configuration
     let configuration = SSConfigLazyList()
-    
+
+    ///`[UseCase 1]`
     //1. bouncy animation on each scroll
     configuration.setNewCellAnimation(animator: .auto(.bouncy, .always))
     //2. bouncy animation on cell visibily once
     configuration.setNewCellAnimation(animator: .auto(.bouncy, .once))
     //3. animate from right to left
     configuration.setNewCellAnimation(animator: .fromRight(.default))
-    
+
+    ///`[UseCase 2]`
     //1. using default loading indictor it array of data model is not set with API Response
     configuration.setLoadingView(viewType: .system)
     //2. provide custom view...
     configuration.setLoadingView(viewType: .customView(AnyView(Text("please wait..."))))
-    
+
+    ///`[UseCase 3]`
     //1. using default `No data found` view to show there is not data available aka blank array (eg. users = [])
     configuration.setNoDataView(viewType: .system)
     //2. provide custom view...
     configuration.setNoDataView(viewType: .customView(AnyView(Text("No user available."))))
-    
+
+    ///`**[UseCase 4]**`
+    //1. set pulltorefresh view
+    configuration.setReloadType(viewType: SSPullToRefresh(displayView: {
+            AnyView(DisaplyDraggingView(title: "Pull-Down to Refresh"))
+        }, loadingView: {
+            AnyView(ZStack{
+                progressView
+            })
+        }, onTrigger: { allowAgain in
+            print("refresh action")
+
+            ///API CALL GOES HERE...
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                
+                ///reseting array with fresh server response
+                self.start = 0
+                self.records = DataPaginationService.paginateData(dataList: localDb, start: start, length: length).data
+                
+                ///AFTER API CALL , Call `allowAgain` Closure with value `true` to allow sytem to show pulltoRefresh again
+                allowAgain(true)
+            })
+        }))
+
+    ///`**[UseCase 5]**`
+    //1. set LoadMore View in simple way:
+        configuration.setLoadMoreType(viewType: SSLoadMore(type: .onPullUp, displayView: {
+            AnyView(DisaplyDraggingView(title: "Pull-Up to Load More"))
+        }, loadingView: {
+            AnyView(ZStack{
+                progressView
+            })
+        }, onTrigger: { hasMoreRecords in
+            print("page loading action")
+            if self.records != nil{
+                ///API CALL GOES HERE...
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                   
+                    ///Appending server response to array
+                    self.records!.append(contentsOf: DataPaginationService.paginateData(dataList: localDb, start: start, length: length).data)
+
+                    ///AFTER API CALL , Call `allowAgain` Closure with value `true`
+                    ///To allow sytem to show  `load more`  again if there is More data available on server or in DB.
+                    hasMoreRecords(self.records!.count < localDb.count)
+                })
+            }else{
+                ///Default when No data...
+                hasMoreRecords(false)
+            }
+        }))
     return configuration
 }
 ```
@@ -80,9 +132,10 @@ try the demo project for better understanding.
 
 ## Screenshots
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/95f2a014-1665-44fe-a2d1-8888d15481d9" alt="No Data Found - SSLazyList" width="200" style="margin-right: 20px;" loop>
-    <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/e64458cc-9a11-4510-87dd-d0ee80d5a3b3" alt="Animate From Right - SSLazyList" width="200" style="margin-right: 20px;" loop>
-    <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/78b1d17a-84a7-47c5-8855-ff5f71f0c72a" alt="Animation Cell - SSLazyList" width="200" loop>
+     <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/bf14e8d0-adfd-4cdc-9576-0724d4d7a3c2" alt="PulltoRefresh and LoadMore - SSLazyList" width="200" style="margin-right: 20px;" loop>
+     <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/e64458cc-9a11-4510-87dd-d0ee80d5a3b3" alt="Animate From Right - SSLazyList" width="200" style="margin-right: 20px;" loop>
+     <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/78b1d17a-84a7-47c5-8855-ff5f71f0c72a" alt="Animation Cell - SSLazyList" width="200" loop>
+     <img src="https://github.com/KalpeshJetaniSS/SSLazyList/assets/160708458/95f2a014-1665-44fe-a2d1-8888d15481d9" alt="No Data Found - SSLazyList" width="200" style="margin-right: 20px;" loop>
 </div>
 
 ## Note
