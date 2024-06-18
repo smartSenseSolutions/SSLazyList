@@ -1,13 +1,13 @@
 {
-  "originHash" : "f45a70eaadd460bd4fc6c105918fe7eb7e4783f3e590da46bc92b60e9593613d",
+  "originHash" : "5a40b88e655607044a2fb52a1a6868a2490edb1dd67284b8905ba3ec6284a08b",
   "pins" : [
     {
       "identity" : "sslazylist",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/KalpeshJetaniSS/SSLazyList",
+      "location" : "https://github.com/smartSenseSolutions/SSLazyList",
       "state" : {
-        "branch" : "main",
-        "revision" : "09e92d6ab7e61fc71f232e15a57e4f058de31192"
+        "branch" : "development",
+        "revision" : "f16812404d9fbc96c94cd37be7b06c7ccc5a981e"
       }
     }
   ],

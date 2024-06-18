@@ -7,11 +7,8 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
-/// A SSLazyList view that displays content based on a collection of identifiable data.
-///
-/// This view is generic over two types: `DataValue`, which must conform to the `Identifiable` protocol,
-/// and `Content`, which represents the content view to be displayed.
 public struct SSLazyList<DataValue, Content>: View where DataValue:Identifiable, Content:View {
     
     //MARK: - Properties
@@ -26,13 +23,25 @@ public struct SSLazyList<DataValue, Content>: View where DataValue:Identifiable,
     /// This closure is called for each data value in the list to create the corresponding content view.
     let rowContent: (DataValue) -> Content
     
+    public var configuration: SSConfigLazyList
+    
     //MARK: - Observing Properties
     /// The configuration object for the lazy list.
     ///
     /// This object holds the configuration settings for the lazy list view.
     /// Changes to this object trigger updates to the view's layout and content.
-    @StateObject public var configuration: SSConfigLazyList
-        
+    @State public var isActive_PullToRefresh = true
+    @State public var isRefreshing = false
+    @State public var refreshRect : CGRect = .zero
+    @State public var refreshScrollRect : CGRect = .zero
+    
+    @State public var isActive_LoadMore = true
+    @State public var isPageLoading = false
+    @State public var pagerViewRect : CGRect = .zero
+    @State public var pageScrollRect : CGRect = .zero
+    
+    @State var cancellable : AnyCancellable?
+    
     // MARK: - Constructor
     /// Initializes a lazy list view with the provided data, row content closure, and configuration.
     ///
@@ -43,7 +52,7 @@ public struct SSLazyList<DataValue, Content>: View where DataValue:Identifiable,
     public init(data: [DataValue]?, rowContent: @escaping (DataValue) -> Content, configuration: SSConfigLazyList) {
         self.data = data
         self.rowContent = rowContent
-        self._configuration = StateObject(wrappedValue: configuration)
+        self.configuration = configuration //StateObject(wrappedValue: configuration)
     }
     
     /// The body of the lazy list view.
@@ -62,12 +71,102 @@ public struct SSLazyList<DataValue, Content>: View where DataValue:Identifiable,
     @ViewBuilder
     var loadListWrapper: some View {
         if let dataList = data, dataList.count > 0{
-            List(dataList) { item in
-                self.rowContent(item)
-                    .conditionalModifier(apply: (configuration.newCellAnimation != SSCellAnimationType.none), applier: { view in
-                        view.modifier(SSListCellAnimator(newCellAnimationType: configuration.newCellAnimation, scrollPosition: .zero ))
-                    })
+            let firstItemIdx = dataList.first!.id
+            let lastItemIdx = dataList.last!.id
+            VStack{
+                
+                VStack{                    
+                    if (self.isRefreshing){
+                        configuration.pullToRefreshType?.refreshingView
+                    }
+                }
+                
+                ZStack{
+                    
+                    if(self.isRefreshing == false && self.isPageLoading == false){
+                        //pulldown to refresh
+                        if(self.isActive_PullToRefresh && (configuration.pullToRefreshType != nil) && refreshRect != .zero){
+                            VStack{
+                                configuration.pullToRefreshType?.view
+                                    .modifier(SSListRefresher(isActive:$isActive_PullToRefresh, isRefreshing: self.$isRefreshing, pullDownRect: self.$refreshScrollRect, displayRect: self.$refreshRect, onRefresh: {closure in
+                                        configuration.dataLoadingClosure = closure
+                                        configuration.pullToRefreshType?.callback(closure)
+                                        if (configuration.pageLoadingType != nil && self.isActive_LoadMore != true){
+                                            self.isActive_LoadMore = true
+                                        }
+                                    }))
+                                Spacer()
+                            }
+                        }
+                        
+                        //pullup to load page
+                        if(self.isActive_LoadMore && pagerViewRect != .zero){
+                            if (configuration.pageLoadingType?.type == .onPullUp || configuration.pageLoadingType?.type == .onLastRow){
+                                let notifyVariableHeight = configuration.pageLoadingType?.type == .onPullUp ? -18 : -self.pagerViewRect.height + 18
+                                
+                                VStack{
+                                    Spacer()
+                                    configuration.pageLoadingType?.view
+                                        .modifier(SSNewPageLoader(isActive:$isActive_LoadMore, isPageLoading: self.$isPageLoading, pullUpRect: self.$pageScrollRect, displayRect: self.$pagerViewRect,notifyVariableHeight: notifyVariableHeight, onPageLoad: { closure in
+                                            configuration.dataLoadingClosure = closure
+                                            configuration.pageLoadingType?.callback(closure)
+                                        }))
+                                }
+                            }
+                        }
+                    }
+                    
+                    GeometryReader { listGeoReader in
+                        List{
+                            if (refreshRect == .zero && (configuration.pullToRefreshType != nil)){
+                                self.setUpRefreshRect()
+                            }
+                            Group {
+                                self.rowContent(dataList.first!)
+                                    .conditionalModifier(apply: (configuration.pullToRefreshType != nil) && self.isRefreshing == false && self.isPageLoading == false, applier: { view in
+                                        return view.modifier(SSListCellFrameObserver(scrollRect: self.$refreshScrollRect))//.animation(.easeInOut(duration: 0.1), value: self.refreshScrollRect)
+                                    }).conditionalModifier(apply: firstItemIdx == lastItemIdx, applier: { view in
+                                        return applyLastRowModifier(view: view, listGeoReader: listGeoReader)
+                                    }).conditionalModifier(apply: (configuration.newCellAnimation != SSCellAnimationType.none && self.isRefreshing == false && self.isPageLoading == false), applier: { view in
+                                        view.modifier(SSListCellAnimator(newCellAnimationType: configuration.newCellAnimation, scrollPosition: .zero ))
+                                    })
+                                
+                                ForEach(dataList){ item in
+                                    if (firstItemIdx != item.id && lastItemIdx != item.id){
+                                        self.rowContent(item)
+                                            .conditionalModifier(apply: (configuration.newCellAnimation != SSCellAnimationType.none && self.isRefreshing == false && self.isPageLoading == false), applier: { view in
+                                            view.modifier(SSListCellAnimator(newCellAnimationType: configuration.newCellAnimation, scrollPosition: .zero ))
+                                        })
+                                    }
+                                }
+                                
+                                if (firstItemIdx != lastItemIdx){
+                                    applyLastRowModifier(view: self.rowContent(dataList.last!), listGeoReader: listGeoReader).conditionalModifier(apply: (configuration.newCellAnimation != SSCellAnimationType.none && self.isRefreshing == false && self.isPageLoading == false), applier: { view in
+                                        view.modifier(SSListCellAnimator(newCellAnimationType: configuration.newCellAnimation, scrollPosition: .zero )).conditionalModifier(apply: (configuration.newCellAnimation != SSCellAnimationType.none && self.isRefreshing == false && self.isPageLoading == false), applier: { view in
+                                            view.modifier(SSListCellAnimator(newCellAnimationType: configuration.newCellAnimation, scrollPosition: .zero ))
+                                        })
+                                    })
+                                }
+                            }
+                        }
+                        //.animation(nil, value: self.isRefreshing)
+                        
+                        if (pagerViewRect == .zero && configuration.pageLoadingType?.type == .onPullUp){
+                            self.setUpPageLoaderRect(rectList: listGeoReader.frame(in: .named("SSListPaggerNameSpace")))
+                        }
+                    }
+                }
+                
+                VStack{
+                    
+                    if (self.isPageLoading){
+                        configuration.pageLoadingType?.refreshingView
+                    }
+                }
             }
+            .animation(.linear(duration: 0.3), value: self.isRefreshing)
+            .coordinateSpace(name: "SSListPaggerNameSpace")
+            .environment(\.defaultMinListRowHeight, 1)
         }
         else {
             if (data?.count == 0 && self.configuration.dataNotFoundView != .none){
@@ -77,6 +176,89 @@ public struct SSLazyList<DataValue, Content>: View where DataValue:Identifiable,
                 getDefaultProgressView(type: self.configuration.loadingView)
             }
         }
+    }
+    
+    @ViewBuilder
+    func setUpRefreshRect()-> some View{
+        configuration.pullToRefreshType?.view.hidden().frame(maxWidth: .infinity).background(
+            GeometryReader { gr in
+                Color.clear
+                let _ = DispatchQueue.main.async(execute: {
+                    self.refreshRect = gr.frame(in: .named("SSListPaggerNameSpace"))
+                })
+            }
+        )
+    }
+    
+    @ViewBuilder
+    func setUpPageLoaderRect(rectList : CGRect)-> some View{
+        
+        configuration.pageLoadingType?.view.hidden().opacity(0).frame(maxWidth: .infinity).background(
+            GeometryReader { gr in
+                Color.clear
+                let _ = DispatchQueue.main.async(execute: {
+                    let viewFrame = gr.frame(in: .named("SSListPaggerNameSpace"))
+                    var newRect = self.pagerViewRect
+
+                    if newRect.minX == 0 {
+                        newRect.origin.x = rectList.minX
+                    }
+                    if newRect.minY == 0 {
+                        newRect.origin.y = rectList.height
+                    }
+                    if viewFrame.width != 0 {
+                        newRect.size.width = viewFrame.width
+                    }
+                    if viewFrame.height != 0 {
+                        newRect.size.height = viewFrame.height
+                    }
+                    self.pagerViewRect = newRect
+                })
+            }
+        )
+    }
+    
+    func setUpLastRowLoaderRect(rectList : CGRect, rowRect: CGRect)-> Void{
+        let _ = DispatchQueue.main.async(execute: {
+            let viewFrame = rowRect
+            var newRect = self.pagerViewRect
+
+            if newRect.minX == 0 {
+                newRect.origin.x = rectList.minX
+            }
+            if newRect.minY == 0 {
+                newRect.origin.y = rectList.height + viewFrame.height /** 2*/
+            }
+            if viewFrame.width != 0 {
+                newRect.size.width = viewFrame.width
+            }
+            if viewFrame.height != 0 {
+                newRect.size.height = viewFrame.height
+            }
+            self.pagerViewRect = newRect
+        })
+    }
+    
+    
+    @ViewBuilder
+    fileprivate func applyLastRowModifier<T:View>(view: T, listGeoReader: GeometryProxy) -> some View {
+        view
+            .conditionalModifier(apply: (self.isRefreshing == false && self.isPageLoading == false), applier: { view in
+                view.conditionalModifier(apply: configuration.pageLoadingType?.type == .onPullUp) { view in
+                    view.modifier(SSListCellFrameObserver(scrollRect: self.$pageScrollRect))
+                }
+                .conditionalModifier(apply: configuration.pageLoadingType?.type == .onLastRow){
+                    view in
+                    view.modifier(SSListCellFrameObserver(scrollRect: self.$pageScrollRect)).background(
+                        
+                    GeometryReader { readerLastRow in
+                        Color.clear
+                        if (pagerViewRect == .zero){
+                            let _ = self.setUpLastRowLoaderRect(rectList: listGeoReader.frame(in: .local), rowRect: readerLastRow.frame(in: .named("SSListPaggerNameSpace")))
+                        }
+                    })
+                }
+            })//.animation(.easeInOut(duration: 0.1), value: self.pageScrollRect)
     }
 }
 
@@ -150,5 +332,22 @@ fileprivate extension View{
             self
         }
     }
+    
+    @ViewBuilder
+    func viewProxy<Content:View>(applier:(Self)->(Content)) -> some View {
+        applier(self)
+    }
+    
+    func getViewFrameProxy(frame:@escaping (CGRect)->()) -> some View {
+        self.background(
+            GeometryReader { reader in
+                Color.blue//.frame(maxWidth: .infinity, maxHeight: .infinity)
+                let _ = frame(reader.frame(in: .global))
+            }
+        )
+    }
 }
+
+
+
 
