@@ -42,7 +42,7 @@ struct ContentView: View {
 
     var config : SSConfigLazyList {
         
-        let configuration = SSConfigLazyList(animator: .auto(.bouncy, .always))
+        let configuration = SSConfigLazyList() //animator: .auto(.bouncy, .always)
         
         configuration.setReloadType(viewType: SSPullToRefresh(displayView: {
             AnyView(DisaplyDraggingView(title: "Pull-Down to Refresh"))
@@ -53,10 +53,14 @@ struct ContentView: View {
         }, onTrigger: { allowAgain in
             print("refresh action")
 
+            ///API CALL GOES HERE...
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 
+                ///reseting array with fresh server response
                 self.start = 0
                 self.records = DataPaginationService.paginateData(dataList: localDb, start: start, length: length).data
+                
+                ///AFTER API CALL , Call `allowAgain` Closure with value `true` to allow sytem to show pulltoRefresh again
                 allowAgain(true)
             })
         }))
@@ -70,12 +74,18 @@ struct ContentView: View {
         }, onTrigger: { hasMoreRecords in
             print("page loading action")
             if self.records != nil{
+                ///API CALL GOES HERE...
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                   
+                    ///Appending server response to array
                     self.records!.append(contentsOf: DataPaginationService.paginateData(dataList: localDb, start: start, length: length).data)
 
+                    ///AFTER API CALL , Call `allowAgain` Closure with value `true`
+                    ///To allow sytem to show  `load more`  again if there is More data available on server or in DB.
                     hasMoreRecords(self.records!.count < localDb.count)
                 })
             }else{
+                ///Default when No data...
                 hasMoreRecords(false)
             }
         }))
