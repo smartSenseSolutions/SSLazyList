@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044C35B42C219F3900E1879D /* SSLazyList in Frameworks */ = {isa = PBXBuildFile; productRef = 044C35B32C219F3900E1879D /* SSLazyList */; };
 		04580B9B2BF75E1000093EA3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04580B9A2BF75E1000093EA3 /* UserModel.swift */; };
 		047522DE2BF75AFA00A32F19 /* iOS_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522DD2BF75AFA00A32F19 /* iOS_ExampleApp.swift */; };
 		047522E02BF75AFA00A32F19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522DF2BF75AFA00A32F19 /* ContentView.swift */; };
@@ -14,7 +15,6 @@
 		047522FA2BF75AFB00A32F19 /* iOS_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522F92BF75AFB00A32F19 /* iOS_ExampleUITests.swift */; };
 		047522FC2BF75AFB00A32F19 /* iOS_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047522FB2BF75AFB00A32F19 /* iOS_ExampleUITestsLaunchTests.swift */; };
 		049DD2502C2192AB00B73A7E /* DataPaginationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DD24F2C2192AB00B73A7E /* DataPaginationService.swift */; };
-		04BFD2E92BFB24C3008938B2 /* SSLazyList in Frameworks */ = {isa = PBXBuildFile; productRef = 04BFD2E82BFB24C3008938B2 /* SSLazyList */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04BFD2E92BFB24C3008938B2 /* SSLazyList in Frameworks */,
+				044C35B42C219F3900E1879D /* SSLazyList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +166,7 @@
 			);
 			name = iOS_Example;
 			packageProductDependencies = (
-				04BFD2E82BFB24C3008938B2 /* SSLazyList */,
+				044C35B32C219F3900E1879D /* SSLazyList */,
 			);
 			productName = iOS_Example;
 			productReference = 047522DA2BF75AFA00A32F19 /* iOS_Example.app */;
@@ -241,7 +241,7 @@
 			);
 			mainGroup = 047522D12BF75AFA00A32F19;
 			packageReferences = (
-				04BFD2E72BFB24C3008938B2 /* XCRemoteSwiftPackageReference "SSLazyList" */,
+				044C35B22C219F3900E1879D /* XCRemoteSwiftPackageReference "SSLazyList" */,
 			);
 			productRefGroup = 047522DB2BF75AFA00A32F19 /* Products */;
 			projectDirPath = "";
@@ -645,20 +645,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		04BFD2E72BFB24C3008938B2 /* XCRemoteSwiftPackageReference "SSLazyList" */ = {
+		044C35B22C219F3900E1879D /* XCRemoteSwiftPackageReference "SSLazyList" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/KalpeshJetaniSS/SSLazyList";
+			repositoryURL = "https://github.com/smartSenseSolutions/SSLazyList";
 			requirement = {
-				branch = main;
+				branch = development;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		04BFD2E82BFB24C3008938B2 /* SSLazyList */ = {
+		044C35B32C219F3900E1879D /* SSLazyList */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04BFD2E72BFB24C3008938B2 /* XCRemoteSwiftPackageReference "SSLazyList" */;
+			package = 044C35B22C219F3900E1879D /* XCRemoteSwiftPackageReference "SSLazyList" */;
 			productName = SSLazyList;
 		};
 /* End XCSwiftPackageProductDependency section */
