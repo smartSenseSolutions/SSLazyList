@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/smartSenseSolutions/SSLazyList",
       "state" : {
-        "branch" : "development",
-        "revision" : "f16812404d9fbc96c94cd37be7b06c7ccc5a981e"
+        "branch" : "main",
+        "revision" : "3c9dab682ec4412269a35b1bce37467cc1b33d34"
       }
     }
   ],
