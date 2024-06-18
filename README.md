@@ -5,9 +5,13 @@
  
 ### Key Features
 
-- **Loading View**: Easily set or use a default `Loading...` view to indicate data loading.
+- **Pagination**: Easy to manage pagination and reloading of data
+- - **Refresh/Reload data**: Easily set Pull to refresh with your custom views and stop handler...
+- - **Load More data**: Easily to intigrate load more feature with Closing handler...
 - **Cell Animation**: Enjoy elegant animations when cells appear.
-- **No Data Found Message**: Display a default or custom message when no data is returned from an API.
+- **Custom Views**
+- - **Loading View**: Easily set or use a default `Loading...` view to indicate data loading.
+- - **No Data Found Message**: Display a default or custom message when no data is returned from an API.
 - **Highly Configurable**: Enjoy 100% flexibility in usage with a wide range of configurable options.
 
 ### Usage Comparison
@@ -17,10 +21,10 @@
 With the standard SwiftUI `List`, a non-optional array of data models is required:
 
 ```swift
-@State var users: [UserModel] = []
+@State var records: [Record] = []
 
-List(users) { user in
-    UserDetailCell(user: user)
+List(records) { record in
+    ListRowView(record: record)
 }
 ```
 
@@ -29,15 +33,18 @@ List(users) { user in
 With `SSLazyList`, you can use an optional array of data models and configure the list easily:
 
 ```swift
-@State var users: [UserModel]?
+@State private var records : [Record]? = nil
 
 var config: SSConfigLazyList {
     let configuration = SSConfigLazyList(animator: .auto(.bouncy, .always))
     return configuration
 }
 
-SSLazyList(data: users, rowContent: { user in
-    UserDetailCell(user: user)
+SSLazyList(data: records, rowContent: { record in
+    VStack{ // your row content ...
+          Spacer(minLength: 10)
+          Text(record.value).font(.title)
+    }
 }, configuration: config)
 
 ```
