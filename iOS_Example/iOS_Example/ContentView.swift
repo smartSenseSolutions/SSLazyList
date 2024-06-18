@@ -44,7 +44,6 @@ struct ContentView: View {
         
         let configuration = SSConfigLazyList(animator: .auto(.bouncy, .always))
         
-        /*
         configuration.setReloadType(viewType: SSPullToRefresh(displayView: {
             AnyView(DisaplyDraggingView(title: "Pull-Down to Refresh"))
         }, loadingView: {
@@ -80,7 +79,6 @@ struct ContentView: View {
                 hasMoreRecords(false)
             }
         }))
-        */
         configuration.setLoadingView(viewType: .system)
         configuration.setNoDataView(viewType: .system)
         
