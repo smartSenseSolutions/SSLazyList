@@ -26,6 +26,7 @@ public enum SSViewType: Equatable, CustomStringConvertible {
     public enum SSDefaultViewType{
         case progressIndicator
         case dataNotFound
+        case loadingHeader
     }
     
     //MARK: - Enum Cases

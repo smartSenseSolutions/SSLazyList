@@ -128,11 +128,15 @@ public struct SSListCellAnimator : ViewModifier {
         didSet{
             if oldValue.y < scrollPosition.y{
                 if (scrollDirection != .bottom){
-                    scrollDirection = .bottom
+                    DispatchQueue.main.async {
+                        scrollDirection = .bottom
+                    }
                 }
             }else{
                 if (scrollDirection != .top){
-                    scrollDirection = .top
+                    DispatchQueue.main.async {
+                        scrollDirection = .top
+                    }
                 }
             }
         }
@@ -153,17 +157,16 @@ public struct SSListCellAnimator : ViewModifier {
     public func body(content: Content) -> some View {
         return content
             .opacity(isVisible ? 1.0 : 0)
-            //.background(.clear)//TODO: - Test
-            .coordinateSpace(name: "scroll")
+            .coordinateSpace(name: "SSListCellAnimatorNameSpace")
             .background(GeometryReader { geometry in
                 Color.clear
-                    .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("scroll")).origin)
+                    .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("SSListCellAnimatorNameSpace")).origin)
             })
-            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
+            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in                
                 self.scrollPosition = value
             }
             .offset(calculateOffsetForAnimation(animationType: newCellAnimationType, direction: scrollDirection, animateFrom: animationDistance))
-            .animation(newCellAnimationType.animation) //animation(_:value:) is not working.
+            .animation(newCellAnimationType.animation) //animation(_:value:) is not working. eg. , value: self.isVisible
             .onAppear{
                 isVisible = true
             }
