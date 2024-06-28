@@ -159,7 +159,7 @@ The data model should implement the `Identifiable` protocol, just like what's ne
 To integrate SSLazyList into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'SSLazyList', '~> 1.0.0'
+pod 'SSLazyList', '~> 1.2.0'
 ```
 
 and in your code add **import SSLazyList**.
