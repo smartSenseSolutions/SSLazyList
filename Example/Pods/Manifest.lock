@@ -1,5 +1,5 @@
 PODS:
-  - SSLazyList (1.0.0)
+  - SSLazyList (1.2.0)
 
 DEPENDENCIES:
   - SSLazyList (from `../`)

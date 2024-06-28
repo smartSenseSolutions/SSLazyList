@@ -1,6 +1,6 @@
 {
   "name": "SSLazyList",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "summary": "SSLazyList is a wrapper for the standard SwiftUI List",
   "description": "'[SmartSense Solutions](https://www.smartsensesolutions.com/) has introduced `SSLazyList`, `SSLazyList` makes working with `List` in SwiftUI more efficient and elegant. By providing customisable list cell animations, loading views, no data messages, and flexible configurations, it serves as a wrapper for the standard `List` hence developer can leverage all features available in `List`'\n  ### Key Features\n\n  - **Loading View**: Easily set or use a default `Loading...` view to indicate data loading.\n  - **Cell Animation**: Enjoy elegant animations when cells appear.\n  - **No Data Found Message**: Display a default or custom message when no data is returned from an API.\n  - **Highly Configurable**: Enjoy 100% flexibility in usage with a range of configurable options.",
   "homepage": "https://github.com/smartsensesolutions/SSLazyList",
@@ -18,7 +18,7 @@
   },
   "source": {
     "git": "https://github.com/smartsensesolutions/SSLazyList.git",
-    "tag": "1.1.0"
+    "tag": "1.2.0"
   },
   "social_media_url": "https://x.com/smartsense13",
   "platforms": {

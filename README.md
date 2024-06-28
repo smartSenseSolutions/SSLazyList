@@ -41,7 +41,7 @@ SSLazyList is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SSLazyList', '~> 1.1.0'
+pod 'SSLazyList', '~> 1.2.0'
 ```
 Update your Xcode project build option ```ENABLE_USER_SCRIPT_SANDBOXING to 'No'.```
 <img width="100%" alt="ENABLE_USER_SCRIPT_SANDBOXING" src="https://github.com/smartSenseSolutions/SSLazyList/assets/160708458/dba2c39e-9ab2-4c7a-86ea-ff5c8201c4f8">
@@ -54,7 +54,7 @@ When using Xcode 14 or later, you can install `SSLazyList` by going to your Proj
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/smartSenseSolutions/SSLazyList.git", .upToNextMajor(from: "1.0"))
+    .package(url: "https://github.com/smartSenseSolutions/SSLazyList.git", .upToNextMajor(from: "main"))
 ]
 ```
 
